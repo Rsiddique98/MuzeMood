@@ -1,0 +1,54 @@
+/* Homepage Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensures it stays behind content */
+    background: linear-gradient(45deg, #2e032f, #940a4f, #0a0a0a); /* Default Gradient */
+    background-size: 400% 400%; /* Makes animation smoother */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mood transition */
+.mood-transition {
+    transition: background 1.5s ease-in-out;
+}
+
+.navbar {
+    background: transparent !important; /* Ensures transparency */
+    transition: background-color 0.3s ease-in-out;
+    backdrop-filter: blur(10px); /* Smooth glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+}
+
+.navbar-brand i {
+    margin-right: 8px; /* Add spacing between the icon and text */
+    font-size: 20px; /* Adjust icon size */
+    color: #fff; /* Change color if needed */
+}
+
+.navbar a {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth effect */
+    color: #fff;
+    display: inline-block; /* Allows transform to work properly */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+    transform: translateY(-3px) scale(1.1); /* Moves links up and enlarges */
+    color: #2e032f; /* Optional: Change color on hover */
+}
+
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Slightly dark when scrolling */
+}
