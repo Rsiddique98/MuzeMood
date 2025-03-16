@@ -46,18 +46,17 @@
     display: inline-block; /* Allows transform to work properly */
 }
 
-/* Mobile toggle button */
 .navbar a:hover {
     transform: translateY(-3px) scale(1.1); /* Moves links up and enlarges */
-    color: #2e032f; /* Optional: Change color on hover */
+    color: #2e032f; /* Changes color on hover */
 }
 
-/* Border & Icon */
+/* Mobile toggle button border & icon */
 .navbar-toggler {
     border-color: #fff !important; /* Sets border to white */
 }
 
-/* Remove outline when toggler button is clicked/focused */
+/* Removes outline when toggler button is clicked/focused */
 .navbar-toggler:focus {
  box-shadow: none !important; /* Removes the box-shadow */
 }
@@ -67,3 +66,50 @@
     background-color: rgba(255, 255, 255, 0.1); /* Slight white background when hovering */
 }
 
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 10%;
+    background: transparent;
+    position: relative;
+}
+
+/* Hero Text */
+.hero-content {
+    max-width: 600px;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Button */
+.btn {
+    color: white !important;
+    font-size: 1.3rem !important;
+}
+
+.btn:hover {
+    color:#2e032f !important;
+    transform: scale(1.1);
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 850px;
+    height: auto;
+    animation: float 5s infinite ease-in-out;
+    
+}
