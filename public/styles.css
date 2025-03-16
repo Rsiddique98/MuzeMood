@@ -23,6 +23,8 @@
     transition: background 1.5s ease-in-out;
 }
 
+/*Navbar */
+
 .navbar {
     background: transparent !important; /* Ensures transparency */
     transition: background-color 0.3s ease-in-out;
@@ -30,6 +32,7 @@
     -webkit-backdrop-filter: blur(10px); /* Safari support */
 
 }
+
 
 .navbar-brand i {
     margin-right: 8px; /* Add spacing between the icon and text */
@@ -43,12 +46,24 @@
     display: inline-block; /* Allows transform to work properly */
 }
 
-/* Hover Effect */
+/* Mobile toggle button */
 .navbar a:hover {
     transform: translateY(-3px) scale(1.1); /* Moves links up and enlarges */
     color: #2e032f; /* Optional: Change color on hover */
 }
 
-.navbar-scrolled {
-    background-color: rgba(0, 0, 0, 0.3) !important; /* Slightly dark when scrolling */
+/* Border & Icon */
+.navbar-toggler {
+    border-color: #fff !important; /* Sets border to white */
 }
+
+/* Remove outline when toggler button is clicked/focused */
+.navbar-toggler:focus {
+ box-shadow: none !important; /* Removes the box-shadow */
+}
+
+/*Hover Effect*/
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background when hovering */
+}
+
