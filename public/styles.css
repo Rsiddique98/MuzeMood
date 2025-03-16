@@ -110,6 +110,23 @@
 .hero-image img {
     max-width: 850px;
     height: auto;
-    animation: float 5s infinite ease-in-out;
-    
+    margin-top: 115px;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
 }
