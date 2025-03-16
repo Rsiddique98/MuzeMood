@@ -96,21 +96,34 @@
 }
 
 /* Call-to-Action Button */
-.btn {
+
+.btn-gradient {
+    background: linear-gradient(45deg, #2e032f, #b90b62);
     color: white !important;
     font-size: 1.3rem !important;
+    border: none !important;
+    border-radius: 70px; /* Soft rounded edges */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.btn:hover {
-    color:#2e032f !important;
+/* Hover Effect */
+.btn-gradient:hover {
     transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(148, 10, 79, 0.5); /* Subtle glow effect */
+    color:#fff !important;
 }
+
+/* Click effect */
+.btn-gradient:active {
+    transform: scale(0.98);
+}
+
 
 /* Hero Image */
 .hero-image img {
     max-width: 850px;
     height: auto;
-    margin-top: 115px;
+    margin-top: 125px;
     }
 
 /* Responsive Design */
