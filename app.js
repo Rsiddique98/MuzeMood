@@ -41,7 +41,7 @@ app.get("/playlist/:mood", async (req, res) => {
         return res.status(404).send("Playlist not found");
     }
 
-    // OpenWhyd API URL (replace with actual API endpoint if needed)
+    // OpenWhyd API URL 
     const openwhydApiUrl = `https://openwhyd.org/${OPENWHYD_USER_ID}/playlist/${playlistId}?format=json`;
 
 

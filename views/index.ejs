@@ -20,7 +20,7 @@
     <div class="hero-content">
         <h1>Feel the Vibe, Hear the Sound.</h1>
         <p>Elevate your music taste with MuzeMood.</p>
-        <a href="#" class="btn btn-gradient">Listen now</a>
+        <a href="#" id="listen-now-btn" class="btn btn-gradient">Listen now</a>
     </div>
     <div class="hero-image">
         <img src="/images/headphonegirl.png" alt="Headphone Girl">
@@ -75,6 +75,19 @@
             })
             .catch(error => console.error("Error loading playlist:", error));
     }
+
+     // ✅ Smooth scroll for "Listen Now" button
+     document.addEventListener("DOMContentLoaded", function () {
+        const listenNowBtn = document.getElementById("listen-now-btn");
+        const musicPlayerContainer = document.getElementById("music-player-container");
+
+        if (listenNowBtn && musicPlayerContainer) {
+            listenNowBtn.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                musicPlayerContainer.scrollIntoView({ behavior: "smooth" });
+            });
+        }
+    });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
