@@ -132,14 +132,66 @@
         flex-direction: column;
         text-align: center;
         padding: 5%;
+        margin-top: 30px;
     }
 
     .hero-content {
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .hero-image img {
-        max-width: 80%;
+        max-width: 100%;
         margin-top: 20px;
+
     }
+}
+
+/* Playlist section */ 
+
+#playlist-moods {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.mood-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mood-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mood-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mood-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.mood-item:hover {
+    transform: scale(1.1);
 }

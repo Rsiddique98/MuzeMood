@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= mood.charAt(0).toUpperCase() + mood.slice(1) %> Playlist</title>
+    <link rel="stylesheet" href="/playlist.css">
+     <!-- Swiper.js CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<body>
+<!-- 🎵 Playlist Album Cover & Details -->
+
+<section class="playlist-container">
+    <!-- Display Playlist Cover -->
+    <img src="<%= playlistCover %>" alt="<%= mood %> Playlist Cover" class="playlist-cover">
+
+    <h2><%= mood.charAt(0).toUpperCase() + mood.slice(1) %> Playlist</h2>
+
+    <% if (moodTracks.length > 0) { %>
+        <!-- Swiper Container -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <% moodTracks.forEach(song => { %>
+                    <div class="swiper-slide">
+                        <div class="track-card">
+                            <p class="track-title"><%= song.name %></p>
+
+                            <% if (song.eId.startsWith('/yt/')) { %>
+                                <iframe 
+                                src="https://www.youtube.com/embed/<%= song.eId.replace('/yt/', '') %>" 
+                                frameborder="0" allowfullscreen>
+                            </iframe>
+                            <% } else { %>
+                                <a href="<%= song.src.id %>" target="_blank">Listen Here</a>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    <% } else { %>
+        <p>No songs found for this mood 😢</p>
+    <% } %>
+</section>
+<!-- Swiper.js Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Checking if Swiper is loaded:", typeof Swiper !== "undefined");
+
+        if (typeof Swiper !== "undefined") {
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: "1",
+                spaceBetween: 20,
+                loop: true,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            swiper.update();
+            console.log("Swiper initialized. Total slides:", document.querySelectorAll('.swiper-slide').length);
+
+            // Select all track elements (track cards)
+            const trackCards = document.querySelectorAll(".track-card");
+
+            trackCards.forEach((track, index) => {
+                track.addEventListener("click", () => {
+                    swiper.slideToLoop(index); // Ensure correct slide is displayed
+                    updateActiveTrack(index);
+                });
+            });
+
+            function updateActiveTrack(index) {
+                document.querySelectorAll(".track-card").forEach((track, i) => {
+                    track.classList.toggle("active", i === index); // Highlight selected track
+                });
+
+                document.querySelectorAll("iframe").forEach((iframe, i) => {
+                    if (i === index) {
+                        iframe.classList.add("expanded"); // Expand selected video player
+                    } else {
+                        iframe.classList.remove("expanded");
+                    }
+                });
+            }
+        } else {
+            console.error("SwiperJS is not loaded. Check script imports.");
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+/* 🎨 CSS Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #121212;
+    color: white;
+}
+
+#playlist-info {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.playlist-cover {
+    width: 250px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+#music-player {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* 🎵 Swiper Carousel */
+.swiper {
+    width: 90%;
+    margin: 20px auto;
+    padding-bottom: 70px !important; /* Ensure space for pagination */
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    width: 100% !important; /* ✅ Allow Swiper to control slide width */
+    height: 100%; /* Ensure it takes full height */
+   
+}
+
+/* 🎧 Track Card Styling */
+.track-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin: auto; /* Center horizontally */
+    transition: transform 0.3s ease-in-out;
+}
+
+.track-card:hover {
+    transform: scale(1.05);
+}
+
+/* 🎶 Track Title */
+.track-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 🎬 YouTube Video */
+iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+iframe.expanded {
+    height: 350px;
+}
+
+/* 🎼 Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.2);
+}
+
+/* Highlight the active track card */
+.track-card.active {
+    border: 2px solid #ff4081;
+    background-color: rgba(255, 64, 129, 0.2);
+    transform: scale(1.1); /* Slightly enlarge the active track */
+}
+
+
+/* Swiper pagination bullet - Ensure it syncs with the track selection */
+
+
+.swiper-pagination-bullet-active {
+    background-color: #ff4081 !important;
+    opacity: 1;
+}
