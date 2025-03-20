@@ -112,7 +112,7 @@
 /* Hover Effect */
 .btn-gradient:hover {
     transform: scale(1.1);
-    box-shadow: 0px 4px 10px rgba(148, 10, 79, 0.5); /* Subtle glow effect */
+    box-shadow: 0px 4px 10px rgba(219, 206, 213, 0.5); /* Subtle glow effect */
     color:#fff !important;
 }
 
@@ -154,8 +154,13 @@
 #playlist-moods {
     text-align: center;
     color: #fff;
-    margin-top: 10px;
+    margin-top: 80px;
     padding: 20px;
+}
+
+#playlist-moods h2 {
+
+    padding-top: 40px;
 }
 
 .mood-container {
@@ -173,6 +178,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 60px;
 }
 
 .mood-item {
@@ -197,4 +203,68 @@
 
 .mood-item:hover {
     transform: scale(1.1);
+}
+
+/* Connect form */
+
+#connect {
+    margin-top: 80px;
+}
+.connect-section {
+    text-align: center;
+    padding: 50px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    margin: 30px auto;
+    width: 60%;
+    backdrop-filter: blur(10px);
+}
+
+.connect-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.connect-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.connect-section input, 
+.connect-section textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.connect-section button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-letsconnect {
+    background: linear-gradient(45deg, #2e032f, #b90b62);
+    color: white !important;
+    font-size: 1.3rem !important;
+    border: none;
+    border-radius: 70px; /* Soft rounded edges */
+    transition: background 1.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.btn-letsconnect:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(219, 206, 213, 0.5); /* Subtle glow effect */
+    color:#fff !important;
+}
+
+/* Click effect */
+.btn-letsconnect:active {
+    transform: scale(0.98);
 }
