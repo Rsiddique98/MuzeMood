@@ -50,6 +50,7 @@
 <script>
     function loadPlaylist(mood) {
         const animatedBg = document.querySelector('.animated-bg');
+        const listenNowBtn = document.querySelector('.btn-gradient'); 
 
     // Define gradient backgrounds for each mood
     const moodGradients = {
@@ -59,10 +60,11 @@
         energetic: "linear-gradient(45deg, #5949b4, #8066c1, #e9e5ee)"
     };
 
-     // Apply the new background dynamically
+     // Applies the new background dynamically
      if (moodGradients[mood]) {
         animatedBg.style.background = moodGradients[mood];
         animatedBg.style.backgroundSize = "400% 400%"; // Maintain animation effect
+        listenNowBtn.style.background = moodGradients[mood]; // Update button background
     }
 
     fetch(`/playlist/${mood}`)

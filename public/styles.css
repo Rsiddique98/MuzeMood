@@ -106,7 +106,7 @@
     font-size: 1.3rem !important;
     border: none !important;
     border-radius: 70px; /* Soft rounded edges */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: background 1.5s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 /* Hover Effect */
