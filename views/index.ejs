@@ -51,15 +51,18 @@
     function loadPlaylist(mood) {
         const animatedBg = document.querySelector('.animated-bg');
 
-          // Add the new mood class based on the selected mood
-    if (mood === 'sad') {
-        animatedBg.classList.add('sad');
-    } else if (mood === 'energetic') {
-        animatedBg.classList.add('energetic');
-    } else if (mood === 'chill') {
-        animatedBg.classList.add('chill');
-    } else if (mood === 'happy') {
-        animatedBg.classList.add('happy');
+    // Define gradient backgrounds for each mood
+    const moodGradients = {
+        happy: "linear-gradient(45deg, #e74c3c, #f39c12, #c9b18a)",
+        sad: "linear-gradient(45deg, #25919f, #44869c, #dce6e9)",
+        chill: "linear-gradient(45deg, #3b937b, #3c8d89, #a0d6c0)",
+        energetic: "linear-gradient(45deg, #5949b4, #8066c1, #e9e5ee)"
+    };
+
+     // Apply the new background dynamically
+     if (moodGradients[mood]) {
+        animatedBg.style.background = moodGradients[mood];
+        animatedBg.style.backgroundSize = "400% 400%"; // Maintain animation effect
     }
 
     fetch(`/playlist/${mood}`)
