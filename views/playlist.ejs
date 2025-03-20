@@ -28,8 +28,10 @@
 
                             <% if (song.eId.startsWith('/yt/')) { %>
                                 <iframe 
-                                src="https://www.youtube.com/embed/<%= song.eId.replace('/yt/', '') %>" 
-                                frameborder="0" allowfullscreen>
+                                src="https://www.youtube.com/embed/<%= song.eId.replace('/yt/', '') %>?autoplay=1&mute=1"
+                                frameborder="0" 
+                                allow="autoplay" 
+                                allowfullscreen>
                             </iframe>
                             <% } else { %>
                                 <a href="<%= song.src.id %>" target="_blank">Listen Here</a>
@@ -51,57 +53,7 @@
 </section>
 <!-- Swiper.js Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("Checking if Swiper is loaded:", typeof Swiper !== "undefined");
 
-        if (typeof Swiper !== "undefined") {
-            const swiper = new Swiper('.swiper', {
-                slidesPerView: "1",
-                spaceBetween: 20,
-                loop: true,
-                centeredSlides: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-
-            swiper.update();
-            console.log("Swiper initialized. Total slides:", document.querySelectorAll('.swiper-slide').length);
-
-            // Select all track elements (track cards)
-            const trackCards = document.querySelectorAll(".track-card");
-
-            trackCards.forEach((track, index) => {
-                track.addEventListener("click", () => {
-                    swiper.slideToLoop(index); // Ensure correct slide is displayed
-                    updateActiveTrack(index);
-                });
-            });
-
-            function updateActiveTrack(index) {
-                document.querySelectorAll(".track-card").forEach((track, i) => {
-                    track.classList.toggle("active", i === index); // Highlight selected track
-                });
-
-                document.querySelectorAll("iframe").forEach((iframe, i) => {
-                    if (i === index) {
-                        iframe.classList.add("expanded"); // Expand selected video player
-                    } else {
-                        iframe.classList.remove("expanded");
-                    }
-                });
-            }
-        } else {
-            console.error("SwiperJS is not loaded. Check script imports.");
-        }
-    });
-</script>
 
 </body>
 </html>

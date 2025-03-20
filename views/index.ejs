@@ -49,7 +49,20 @@
 <!-- 🎼 JavaScript to Fetch Playlist Dynamically -->
 <script>
     function loadPlaylist(mood) {
-        fetch(`/playlist/${mood}`)
+        const animatedBg = document.querySelector('.animated-bg');
+
+          // Add the new mood class based on the selected mood
+    if (mood === 'sad') {
+        animatedBg.classList.add('sad');
+    } else if (mood === 'energetic') {
+        animatedBg.classList.add('energetic');
+    } else if (mood === 'chill') {
+        animatedBg.classList.add('chill');
+    } else if (mood === 'happy') {
+        animatedBg.classList.add('happy');
+    }
+
+    fetch(`/playlist/${mood}`)
             .then(response => response.text())  // Fetch raw HTML
             .then(html => {
                 document.getElementById("playlist-content").innerHTML = html;
@@ -76,16 +89,27 @@
             .catch(error => console.error("Error loading playlist:", error));
     }
 
-     // ✅ Smooth scroll for "Listen Now" button
+     // ✅ Smooth scroll for "Listen Now", "Playlists" and Play icon button
      document.addEventListener("DOMContentLoaded", function () {
         const listenNowBtn = document.getElementById("listen-now-btn");
+        const playlistsBtn = document.getElementById("playlists-btn");
+        const playBtn = document.getElementById("play-btn");
         const musicPlayerContainer = document.getElementById("music-player-container");
 
-        if (listenNowBtn && musicPlayerContainer) {
-            listenNowBtn.addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent default anchor behavior
-                musicPlayerContainer.scrollIntoView({ behavior: "smooth" });
-            });
+        function scrollToMusicPlayer(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            musicPlayerContainer.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Add event listeners if the elements exist
+        if (listenNowBtn) {
+            listenNowBtn.addEventListener("click", scrollToMusicPlayer);
+        }
+        if (playlistsBtn) {
+            playlistsBtn.addEventListener("click", scrollToMusicPlayer);
+        }
+        if (playBtn) {
+            playBtn.addEventListener("click", scrollToMusicPlayer);
         }
     });
 </script>

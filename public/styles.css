@@ -9,6 +9,7 @@
     background: linear-gradient(45deg, #2e032f, #940a4f, #0a0a0a); /* Default Gradient */
     background-size: 400% 400%; /* Makes animation smoother */
     animation: gradientAnimation 10s ease infinite;
+    transition: background 1.5s ease-in-out;
 }
 
 /* Gradient Animation */
@@ -22,6 +23,31 @@
 .mood-transition {
     transition: background 1.5s ease-in-out;
 }
+
+/* Custom Mood Backgrounds */
+
+
+.animated-bg.happy {
+    background: linear-gradient(45deg, #e74c3c, #f39c12, #c9b18a); /* Happy Gradient */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.animated-bg.sad {
+    background: linear-gradient(45deg, #25919f, #44869c, #dce6e9); /* Sad Gradient */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.animated-bg.chill {
+    background: linear-gradient(45deg, #3b937b, #3c8d89, #a0d6c0); /* Chill Gradient */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.animated-bg.energetic {
+    background: linear-gradient(45deg, #5949b4, #8066c1, #e9e5ee); /* Energetic Gradient */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+
 
 /*Navbar */
 
