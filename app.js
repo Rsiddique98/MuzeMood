@@ -11,6 +11,9 @@ const OPENWHYD_USER_ID = process.env.OPENWHYD_USER_ID.toLowerCase(); // Ensure l
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+//Middleware to parse JSON requests
+app.use(express.json());
+
 // Mood categories and playlist covers
 const moodCategories = {
     happy: "0",
@@ -62,7 +65,24 @@ app.get("/playlist/:mood", async (req, res) => {
     }
 });
 
+// POST route to handle form submission
 
+app.post("/submit-song-request", (req, res) => {
+    const { name, songUrl, message } = req.body;
+
+    if (!name || !songUrl) {
+        return res.status(400).json({ success: false, message: "Name and Song URL are required." });
+    }
+
+    // Simulating saving the request (In a real app, store it in a database or a file)
+    console.log("🎵 New Song Request Submitted:");
+    console.log(`- Name: ${name}`);
+    console.log(`- Song URL: ${songUrl}`);
+    console.log(`- Message: ${message || "No message provided"}`);
+
+    // Send a success response
+    res.json({ success: true, message: "Song request submitted successfully!" });
+});
 
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

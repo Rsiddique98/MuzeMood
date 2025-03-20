@@ -79,7 +79,7 @@
         happy: "linear-gradient(45deg, #e74c3c, #f39c12, #c9b18a)",
         sad: "linear-gradient(45deg, #25919f, #44869c, #dce6e9)",
         chill: "linear-gradient(45deg, #3b937b, #3c8d89, #a0d6c0)",
-        energetic: "linear-gradient(45deg, #5949b4, #8066c1, #e9e5ee)"
+        energetic: "linear-gradient(45deg, #5949b2, #8066c1, #e9e5ee)"
     };
 
      // Applies the new background dynamically
@@ -96,13 +96,13 @@
                 document.getElementById("playlist-content").innerHTML = html;
                 document.getElementById("music-player-container").style.display = "block";
 
-                // ✅ Reinitialize Swiper after the playlist is loaded
+                // Reinitialises Swiper after the playlist has loaded
                 setTimeout(() => {
                     new Swiper('.swiper', {
                         slidesPerView: 1,
                         spaceBetween: 20,
                         loop: true,
-                        centeredSlides: true, // Ensure the active slide is always centered
+                        centeredSlides: true, // Ensures the active slide is always centered
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
@@ -147,6 +147,47 @@
     }
 });
        
+</script>
+
+<script>
+// Javascript to handle form submission //
+
+document.getElementById("songRequestForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const name = document.getElementById("name").value;
+    const songUrl = document.getElementById("songUrl").value;
+    const message = document.getElementById("message").value;
+
+    const submissionStatus = document.getElementById("submissionStatus");
+
+    try {
+        const response = await fetch("/submit-song-request", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, songUrl, message }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            submissionStatus.innerText = "✅ Your song request has been submitted!";
+            submissionStatus.style.color = "green";
+            document.getElementById("songRequestForm").reset();
+        } else {
+            submissionStatus.innerText = "❌ There was an error submitting your request.";
+            submissionStatus.style.color = "red";
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        submissionStatus.innerText = "❌ Failed to submit request.";
+        submissionStatus.style.color = "red";
+    }
+});
+
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
