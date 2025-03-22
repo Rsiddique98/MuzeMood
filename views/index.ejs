@@ -69,10 +69,12 @@
 
 <!-- 🎼 JavaScript to Fetch Playlist Dynamically -->
 <script>
+
     function loadPlaylist(mood) {
         const animatedBg = document.querySelector('.animated-bg');
         const listenNowBtn = document.querySelector('.btn-gradient'); 
         const submitRequestBtn = document.querySelector('.btn-letsconnect');
+        const footer = document.querySelector('.footer'); 
 
     // Define gradient backgrounds for each mood
     const moodGradients = {
@@ -88,6 +90,7 @@
         animatedBg.style.backgroundSize = "400% 400%"; // Maintain animation effect
         listenNowBtn.style.background = moodGradients[mood]; // Update button background
         submitRequestBtn.style.background = moodGradients[mood];
+        footer.style.background = moodGradients[mood];
     }
 
     fetch(`/playlist/${mood}`)
@@ -188,10 +191,14 @@ document.getElementById("songRequestForm").addEventListener("submit", async func
 });
 
 
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!--Header-->
+<%- include("footer.ejs") %>  
 </body>
 </html>

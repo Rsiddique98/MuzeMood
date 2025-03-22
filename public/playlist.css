@@ -1,50 +1,37 @@
 
 /* 🎨 CSS Styling */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #121212;
-    color: white;
-}
-
-#playlist-info {
-    margin: 20px auto;
-    text-align: center;
-}
 
 .playlist-cover {
+    display: block;
+    margin: 0 auto;
     width: 250px;
     border-radius: 12px;
     margin-bottom: 10px;
-}
-
-#music-player {
-    max-width: 800px;
-    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.9s ease-in-out; /* Smooth transition */
 }
 
 
 /* 🎵 Swiper Carousel */
+
+#music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .swiper {
     width: 90%;
+    max-width: 1000px;
     margin: 20px auto;
     padding-bottom: 70px !important; /* Ensure space for pagination */
 }
 
-.swiper-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    width: 100% !important; /* Allows swiper to control slide width */
-    height: 100%; /* Ensures it takes full height */
-   
-}
 
 /* 🎧 Track Card Styling */
 .track-card {

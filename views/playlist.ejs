@@ -28,7 +28,7 @@
 
                             <% if (song.eId.startsWith('/yt/')) { %>
                                 <iframe 
-                                src="https://www.youtube.com/embed/<%= song.eId.replace('/yt/', '') %>?autoplay=1&mute=1"
+                                src="https://www.youtube.com/embed/<%= song.eId.replace('/yt/', '') %>?autoplay=0&mute=1"
                                 frameborder="0" 
                                 allow="autoplay" 
                                 allowfullscreen>
@@ -53,6 +53,7 @@
 </section>
 <!-- Swiper.js Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 
 
 </body>

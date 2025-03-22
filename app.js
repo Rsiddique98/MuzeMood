@@ -14,6 +14,7 @@ app.use(express.static("public"));
 //Middleware to parse JSON requests
 app.use(express.json());
 
+
 // Mood categories and playlist covers
 const moodCategories = {
     happy: "0",
@@ -74,7 +75,7 @@ app.post("/submit-song-request", (req, res) => {
         return res.status(400).json({ success: false, message: "Name and Song URL are required." });
     }
 
-    // Simulating saving the request (In a real app, store it in a database or a file)
+    // Simulating saving the request 
     console.log("🎵 New Song Request Submitted:");
     console.log(`- Name: ${name}`);
     console.log(`- Song URL: ${songUrl}`);

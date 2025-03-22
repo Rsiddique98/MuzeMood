@@ -30,10 +30,8 @@
 
 .navbar {
     background: transparent !important; /* Ensures transparency */
-    transition: background-color 0.3s ease-in-out;
     backdrop-filter: blur(10px); /* Smooth glass effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
-
 }
 
 
@@ -162,13 +160,6 @@
 padding-top: 40px;
 }
 
-.mood-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
 
 .mood-grid {
     display: grid;
@@ -272,4 +263,106 @@ padding-top: 40px;
     margin-top: 40px; 
     display: block; /* Ensures it doesn't collapse */
     font-weight: bold;
+}
+
+/* 🎵 Footer Styling */
+.footer {
+    transition: background 1.5s ease-in-out; /* Smooth transition */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Footer Container */
+.footer .container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Footer Row */
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer Logo (Matches Navbar) */
+.footer-brand {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-brand i {
+    font-size: 20px; /* Same size as navbar icon */
+    color: white;
+}
+
+/* Hover Effect */
+.footer-brand:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #2e032f; /* Same hover color as navbar */
+}
+
+.footer-logo p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Navigation Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #2e032f;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+    color: #2e032f;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
