@@ -359,6 +359,11 @@ padding-top: 40px;
     opacity: 0.7;
 }
 
+.footer-bottom a {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
     .footer .row {

@@ -97,7 +97,6 @@
             .then(response => response.text())  // Fetch raw HTML
             .then(html => {
                 document.getElementById("playlist-content").innerHTML = html;
-                document.getElementById("music-player-container").style.display = "block";
 
                 // Reinitialises Swiper after the playlist has loaded
                 setTimeout(() => {
@@ -115,12 +114,13 @@
                             clickable: true,
                         },
                     });
-                }, 500); // Delay to ensure the content is loaded
+                   
+                }); 
             })
             .catch(error => console.error("Error loading playlist:", error));
     }
 
-     // ✅ Smooth scroll for "Listen Now", "Playlists", "Lets Connect" and Play icon button
+     // Smooth scroll for "Listen Now", "Playlists", "Lets Connect" and Play icon button
      document.addEventListener("DOMContentLoaded", function () {
         const listenNowBtn = document.getElementById("listen-now-btn");
         const playlistsBtn = document.getElementById("playlists-btn");
