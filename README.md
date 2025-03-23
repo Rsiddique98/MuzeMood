@@ -6,11 +6,17 @@ The website offers a visually engaging experience with animated backgrounds, sea
 Features
 
 Mood-Based Playlists 🎼 → Users can select a mood (Happy, Sad, Chill, Energetic) to generate a playlist.
+
 Dynamic UI Updates ✨ → Backgrounds and UI elements change based on mood selection.
+
 YouTube Video Playback ▶️ → Embedded YouTube videos for a seamless music experience.
+
 Swiper.js Integration 🔄 → Smooth navigation through songs in a playlist.
+
 Live API Data Fetching 🔗 → Retrieves music playlists from OpenWhyd using Axios.
-Song Submission Form 🎤 → Users can submit YouTube song links for playlist consideration.
+
+Song Submission Form 🎤 → Users can submit YouTube song links for playlist consideration
+
 Error Handling 🛠 → Displays user-friendly messages when API errors occur
 
 🛠 Tech Stack
