@@ -50,7 +50,7 @@ app.get("/playlist/:mood", async (req, res) => {
 
 
     try {
-        const response = await axios.get(openwhydApiUrl);
+        const response = await axios.get(openwhydApiUrl, { timeout: 5000 });
         let moodTracks = response.data || []; 
         const playlistCover = playlistCovers[mood]; 
 
@@ -67,7 +67,7 @@ app.get("/playlist/:mood", async (req, res) => {
              moodTracks: [],
               playlistCover: playlistCovers[mood],
               errorMessage: "Music recommendations are temporarily unavailable! Please try again later!"
-         }); // Ensure it always has a cover
+         });
     }
 });
 
