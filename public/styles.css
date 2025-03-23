@@ -7,9 +7,16 @@
     height: 100vh;
     z-index: -1; /* Ensures it stays behind content */
     background: linear-gradient(45deg, #2e032f, #940a4f, #0a0a0a); /* Default Gradient */
-    background-size: 400% 400%; /* Makes animation smoother */
+    background-size: cover; /* Makes animation smoother */
     animation: gradientAnimation 10s ease infinite;
     transition: background 1.5s ease-in-out;
+}
+
+/* Mobile Background Fix */
+@media (max-width: 768px) {
+    .animated-bg {
+        background-size: contain; /* Ensures the background fits on mobile */
+    }
 }
 
 /* Gradient Animation */

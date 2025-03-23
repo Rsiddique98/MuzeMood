@@ -26,14 +26,31 @@
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-
-.swiper {
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding-bottom: 70px !important; /* Ensure space for pagination */
+/* Mobile Fix */
+@media (max-width: 768px) {
+    #music-player-container {
+        width: 95%; /* Ensures it fits on mobile */
+        transform: translateY(10px);
+    }
 }
 
+
+.swiper {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-bottom: 70px !important; /* Ensure space for pagination */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile Swiper Fix */
+@media (max-width: 768px) {
+    .swiper {
+        max-width: 95%; /* Adjust for smaller screens */
+    }
+}
 
 /* 🎧 Track Card Styling */
 .track-card {
