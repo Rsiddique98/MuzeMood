@@ -22,13 +22,19 @@ Error Handling 🛠 → Displays user-friendly messages when API errors occur
 🛠 Tech Stack
 
 Frontend: HTML, CSS, Bootstrap, JavaScript, Swiper.js
+
 Backend: Node.js, Express.js, EJS (templating engine)
+
 API Integration: OpenWhyd API, Axios
+
 Hosting: Render
 
 OpenWhyd API Usage
+
 Retrieves music playlists categorized by mood.
+
 Filters track data and embeds YouTube videos.
+
 Uses Axios for GET requests to fetch playlists dynamically.
 
 📜 License
