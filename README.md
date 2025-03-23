@@ -38,6 +38,7 @@ Filters track data and embeds YouTube videos.
 Uses Axios for GET requests to fetch playlists dynamically.
 
 📜 License
+
 This project is for educational purposes only and built as part of The App Brewery Full-Stack Web Development course by Dr Angela Yu hosted on Udemy. 
 Some images are sourced from Freepik and Pinterest and require proper attribution.
 
