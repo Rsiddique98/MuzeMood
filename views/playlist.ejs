@@ -17,9 +17,12 @@
 
     <h2><%= mood.charAt(0).toUpperCase() + mood.slice(1) %> Playlist</h2>
 
-    <% if (moodTracks.length > 0) { %>
+    <% if (errorMessage) { %>
+        <!-- Display the error message when OpenWhyd API is down -->
+        <p class="error-message"><%= errorMessage %></p>
+    <% } else if (moodTracks.length > 0) { %>
           <!-- Swiper Wrapper Container -->
-        <div class="swiper-wrapper-container">
+   <div class="swiper-wrapper-container">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <% moodTracks.forEach(song => { %>
@@ -48,10 +51,20 @@
             <!-- Swiper Pagination -->
             <div class="swiper-pagination"></div>
         </div>
+    </div>
     <% } else { %>
         <p>No songs found for this mood 😢</p>
     <% } %>
 </section>
+
+<style>
+    .error-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
 <!-- Swiper.js Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 

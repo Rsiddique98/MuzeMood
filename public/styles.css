@@ -1,10 +1,18 @@
+/* Ensure html and body take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Homepage Background */
 .animated-bg {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1; /* Ensures it stays behind content */
     background: linear-gradient(45deg, #2e032f, #940a4f, #0a0a0a); /* Default Gradient */
     background-size: 400% 400%; /* Makes animation smoother */
@@ -13,9 +21,9 @@
 }
 
 /* Mobile Background Fix */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .animated-bg {
-        background-size: contain; /* Ensures the background fits on mobile */
+        background-size: cover; /* Ensures the background fits on mobile */
     }
 }
 

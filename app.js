@@ -57,12 +57,17 @@ app.get("/playlist/:mood", async (req, res) => {
         // Log to debug
         console.log(`Fetched ${moodTracks.length} tracks for ${mood}`);
 
-        res.render("playlist", { mood, moodTracks, playlistCover });
+        res.render("playlist", { mood, moodTracks, playlistCover, errorMessage: null });
            
 
     } catch (error) {
         console.error(`Error fetching OpenWhyd data for ${mood}:`, error.message);
-        res.render("playlist", { mood, moodTracks: [], playlistCover: playlistCovers[mood] }); // Ensure it always has a cover
+        res.render("playlist", { 
+            mood,
+             moodTracks: [],
+              playlistCover: playlistCovers[mood],
+              errorMessage: "Music recommendations are temporarily unavailable! Please try again later!"
+         }); // Ensure it always has a cover
     }
 });
 
