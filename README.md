@@ -42,14 +42,19 @@ This project is for educational purposes only and built as part of The App Brewe
 Some images are sourced from Freepik and Pinterest and require proper attribution.
 
 👩🏽‍💻 Author
+
 Developed by Rida Siddique.
 
 Project objectives
 
 The goal of this project was to build a website using the express/node.js platform, with the Axios HTTP client that integrates a chosen public API, preferably one that does not require authentication and is CORS enabled. 
+
 The website should interact with the chosen API, retrieve data and present it in a user-friendly manner.
 
 -Develop an understanding of how to integrate public APIs into web projects.
+
 -Gain practical experience using Express/Node.js for server-side programming.
+
 -Enhance understanding of client-server communication using Axios.
+
 -Demonstrate ability to manipulate, present and work with data retrieved from APIs.
