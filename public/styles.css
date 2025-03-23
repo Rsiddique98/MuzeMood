@@ -361,7 +361,10 @@ padding-top: 40px;
 
 .footer-bottom a {
     color: white;
-    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #2e032f; /* Change color on hover */
 }
 
 /* Responsive Footer */
