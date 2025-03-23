@@ -34,6 +34,13 @@
     }
 }
 
+/* 🎵 Swiper Container Fix */
+.swiper-wrapper-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
 
 .swiper {
     width: 100%;
@@ -45,12 +52,30 @@
     align-items: center;
 }
 
-/* Mobile Swiper Fix */
+/* Mobile Fix */
 @media (max-width: 768px) {
     .swiper {
-        max-width: 95%; /* Adjust for smaller screens */
+        width: 100%;
+        max-width: 95%;
+        overflow: hidden;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px; /* Reduce button size */
+        height: 30px;
+    }
+
+    .swiper-button-next {
+        right: 5px; /* Ensure buttons are visible */
+    }
+
+    .swiper-button-prev {
+        left: 5px;
     }
 }
+
+
 
 /* 🎧 Track Card Styling */
 .track-card {
@@ -99,6 +124,7 @@ iframe.expanded {
 .swiper-button-prev:hover {
     transform: scale(1.2);
 }
+
 
 /* Highlight the active track card */
 .track-card.active {
